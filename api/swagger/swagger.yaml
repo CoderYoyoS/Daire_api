@@ -1,0 +1,105 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Library API
+host: localhost:5000
+basePath: /library
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /librarytimes:
+    get:
+      description: Get the opening times for the library
+      summary: Get times
+      operationId: GET library times Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /laptop:
+    get:
+      description: Get information on borrowing laptops
+      summary: Get laptop info
+      operationId: GET laptop information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /refworks:
+    get:
+      description: Get information on how to use refworks
+      summary: Get refworks info
+      operationId: GET refworks information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /printcredit:
+    get:
+      description: Get information on how to top up print credit
+      summary: Get printcredit info
+      operationId: GET printcredit information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /account:
+    get:
+      description: Get information on how to use Library account
+      summary: Get account info
+      operationId: GET account information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /book:
+    get:
+      description: Get information on how to borrow books
+      summary: Get books info
+      operationId: GET books information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+  /bookfind:
+    get:
+      description: Get information on how to find books
+      summary: Get find books info
+      operationId: GET find books information Operation
+      parameters:
+        - name: message
+          in: query
+          description: message from facebook
+          type: string
+      responses:
+        '200':
+          description: Valid
+

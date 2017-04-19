@@ -12,7 +12,7 @@ app.use(bodyParser.json({
     limit :  config.bodyLimit
 }));
 
-app.use('/library',routes);
+app.use(routes);
 
 app.server.listen(process.env.PORT || config.port);
 
