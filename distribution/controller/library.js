@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function () {
     var api = (0, _express.Router)();
 
-    api.get('/pin', function (req, res) {
+    api.get('/pin/notenrolled', function (req, res) {
         _library2.default.find({ type: 'pin' }, function (err, library) {
             if (err) {
                 res.send(err);
@@ -26,7 +26,25 @@ exports.default = function () {
             json = JSON.parse(json);
 
             var message = '';
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 2; i++) {
+                message += json[0]['pin'][i] + '\n';
+            }
+            res.send(message);
+        });
+    });
+
+    api.get('/pin/recovery', function (req, res) {
+        _library2.default.find({ type: 'pin' }, function (err, library) {
+            if (err) {
+                res.send(err);
+            }
+
+            var jsonString = library;
+            var json = JSON.stringify(jsonString);
+            json = JSON.parse(json);
+
+            var message = '';
+            for (var i = 2; i < 4; i++) {
                 message += json[0]['pin'][i] + '\n';
             }
             res.send(message);
@@ -51,7 +69,7 @@ exports.default = function () {
         });
     });
 
-    api.get('/refworks', function (req, res) {
+    api.get('/refworks/signup', function (req, res) {
         _library2.default.find({ type: 'refworks' }, function (err, library) {
             if (err) {
                 res.send(err);
@@ -62,9 +80,25 @@ exports.default = function () {
             json = JSON.parse(json);
 
             var message = '';
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 1; i++) {
                 message += json[0]['refworks'][i] + '\n';
             }
+            res.send(message);
+        });
+    });
+
+    api.get('/refworks/moreinfo', function (req, res) {
+        _library2.default.find({ type: 'refworks' }, function (err, library) {
+            if (err) {
+                res.send(err);
+            }
+
+            var jsonString = library;
+            var json = JSON.stringify(jsonString);
+            json = JSON.parse(json);
+
+            var message = json[0]['refworks'][2] + '\n';;
+
             res.send(message);
         });
     });
