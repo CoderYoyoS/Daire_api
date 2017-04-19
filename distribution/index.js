@@ -34,7 +34,7 @@ app.use(_bodyParser2.default.json({
     limit: _config2.default.bodyLimit
 }));
 
-app.use('/library', _routes2.default);
+app.use(_routes2.default);
 
 app.server.listen(process.env.PORT || _config2.default.port);
 
