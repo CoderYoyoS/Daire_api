@@ -80,7 +80,7 @@ exports.default = function () {
             json = JSON.parse(json);
 
             var message = '';
-            for (var i = 0; i < 1; i++) {
+            for (var i = 0; i < 2; i++) {
                 message += json[0]['refworks'][i] + '\n';
             }
             res.send(message);
@@ -97,7 +97,12 @@ exports.default = function () {
             var json = JSON.stringify(jsonString);
             json = JSON.parse(json);
 
-            var message = json[0]['refworks'][2] + '\n';;
+//             var message = json[0]['refworks'][2] + '\n';;
+            
+            var message = '';
+            for (var i = 2; i < 3; i++) {
+                message += json[0]['printcredit'][i] + '\n';
+            }
 
             res.send(message);
         });
