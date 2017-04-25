@@ -101,7 +101,7 @@ exports.default = function () {
             
             var message = '';
             for (var i = 2; i < 2; i++) {
-                message += json[0]['printcredit'][i] + '\n';
+                message += json[0]['refworks'][i] + '\n';
             }
 
             res.send(message);
